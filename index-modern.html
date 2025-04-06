@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 物理沙盒 - 现代界面</title>
+    <link rel="stylesheet" href="modern-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2D 物理沙盒</h1>
+        
+        <div class="control-panel">
+            <div class="control-group">
+                <h3>形状</h3>
+                <div>
+                    <button id="create-circle" class="btn tooltip">
+                        <i class="fas fa-circle icon"></i> 圆形
+                        <span class="tooltip-text">创建圆形物体</span>
+                    </button>
+                    <button id="create-square" class="btn tooltip">
+                        <i class="fas fa-square icon"></i> 方形
+                        <span class="tooltip-text">创建方形物体</span>
+                    </button>
+                    <button id="create-triangle" class="btn tooltip">
+                        <i class="fas fa-play icon" style="transform: rotate(90deg);"></i> 三角形
+                        <span class="tooltip-text">创建三角形物体</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>物理属性</h3>
+                <div>
+                    <button id="toggle-gravity" class="btn btn-secondary tooltip">
+                        <i class="fas fa-arrow-down icon"></i> 重力
+                        <span class="tooltip-text">切换重力方向</span>
+                    </button>
+                    <button id="increase-bounce" class="btn btn-secondary tooltip">
+                        <i class="fas fa-basketball-ball icon"></i> 弹性+
+                        <span class="tooltip-text">增加弹性</span>
+                    </button>
+                    <button id="decrease-bounce" class="btn btn-secondary tooltip">
+                        <i class="fas fa-bowling-ball icon"></i> 弹性-
+                        <span class="tooltip-text">减少弹性</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>操作</h3>
+                <div>
+                    <button id="clear-all" class="btn btn-accent tooltip">
+                        <i class="fas fa-trash-alt icon"></i> 清空
+                        <span class="tooltip-text">清除所有物体</span>
+                    </button>
+                    <button id="random-color" class="btn btn-accent tooltip">
+                        <i class="fas fa-palette icon"></i> 随机颜色
+                        <span class="tooltip-text">随机改变颜色</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="sandbox-canvas"></canvas>
+            <div class="particle-indicator">物体数量: <span id="particle-count">0</span></div>
+        </div>
+    </div>
+
+    <!-- 引入 Matter.js 物理引擎 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <!-- 引入我们自己的脚本 -->
+    <script src="script-modern.js"></script>
+</body>
+</html>
